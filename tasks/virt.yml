@@ -1,0 +1,7 @@
+---
+- name: install virtualization tools
+  become: true
+  dnf:
+    name:
+      - openssh-askpass   # for remote host over SSH
+      - virt-manager

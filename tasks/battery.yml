@@ -1,0 +1,15 @@
+---
+- name: template systemd charge control unit
+  become: true
+  template:
+    src: battery_thresholds.service.j2
+    dest: /etc/systemd/system/battery_thresholds.service
+    owner: root
+    group: root
+    mode: 0644
+
+- name: enable systemd charge control unit
+  become: true
+  systemd:
+    name: battery_thresholds
+    enabled: true

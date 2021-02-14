@@ -1,0 +1,11 @@
+---
+# handlers file for ansible_posterdati
+
+- name: update grub
+  become: true
+  shell: grub2-mkconfig -o "$(readlink -e /etc/grub2-efi.cfg)"
+
+- name: update DNF cache
+  become: true
+  dnf:
+    update_cache: true

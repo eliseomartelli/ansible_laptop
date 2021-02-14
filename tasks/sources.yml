@@ -1,0 +1,26 @@
+---
+- name: load flathub remote
+  become: true
+  flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+
+- name: add vscode repository
+  become: true
+  yum_repository:
+    name: vscode
+    description: Visual Studio Code
+    baseurl: https://packages.microsoft.com/yumrepos/vscode/
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: true
+  notify: update DNF cache
+
+- name: add RPMFusion repositories
+  become: true
+  dnf:
+    disable_gpg_check: true
+    name:
+      - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+      - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+  when: "'rpmfusion-free-release' not in ansible_facts.packages or 'rpmfusion-nonfree-release' not in ansible_facts.packages"
+  notify: update DNF cache
