@@ -9,6 +9,9 @@
 
 - import_tasks: system.yml
 
+- name: flush handlers
+  meta: flush_handlers
+
 - import_tasks: virt.yml
 
 - import_tasks: apps.yml
