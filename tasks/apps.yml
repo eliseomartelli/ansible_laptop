@@ -23,10 +23,10 @@
       - nmap
       - yamllint
 
-- name: install VSCode
+- name: install VSCodium
   become: true
   dnf:
-    name: code
+    name: codium
 
 - name: install Skype
   become: true

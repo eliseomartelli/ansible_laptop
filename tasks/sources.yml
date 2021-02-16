@@ -5,13 +5,13 @@
     name: flathub
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 
-- name: add vscode repository
+- name: add vscodium repository
   become: true
   yum_repository:
-    name: vscode
-    description: Visual Studio Code
-    baseurl: https://packages.microsoft.com/yumrepos/vscode/
-    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    name: vscodium
+    description: VS Codium
+    baseurl: https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
+    gpgkey: https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
     gpgcheck: true
   notify: update DNF cache
 
