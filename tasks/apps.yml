@@ -13,6 +13,12 @@
       - transmission
       - transmission-remote-gtk
 
+- name: install games
+  become: True
+  dnf:
+    name:
+      - aisleriot
+
 - name: install CLI tools
   become: true
   dnf:
