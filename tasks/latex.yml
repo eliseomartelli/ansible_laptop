@@ -5,6 +5,7 @@
     name:
       - texlive-acro
       - texlive-fontawesome5
+      - texlive-inconsolata
       - texlive-libertinus-fonts
       - texlive-moderncv
       - texlive-mwe
