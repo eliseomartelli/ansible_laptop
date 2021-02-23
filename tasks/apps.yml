@@ -28,6 +28,7 @@
       - ncdu
       - nmap
       - yamllint
+      - rclone
 
 - name: install VSCodium
   become: true
