@@ -27,6 +27,7 @@
       - fdupes
       - ncdu
       - nmap
+      - pandoc
       - yamllint
       - rclone
 
