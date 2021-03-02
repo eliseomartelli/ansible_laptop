@@ -15,6 +15,7 @@
     name:
       - gnome-tweaks
       - seahorse
+      - smartmontools
 
 - name: add things to grub command line
   become: true
