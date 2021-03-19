@@ -1,0 +1,1 @@
+SUBSYSTEM=="usb", ACTION=="add", ENV{ID_MODEL}=="iPhone", RUN+="/usr/bin/env sh -c 'echo Fast > /sys/class/power_supply/apple_mfi_fastcharge/charge_type'"

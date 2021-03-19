@@ -13,3 +13,12 @@
   systemd:
     name: battery_thresholds
     enabled: true
+
+- name: template apple mfi fastcharge udev rule
+  become: true
+  template:
+    src: 99-ios-fastcharge.rules.j2
+    dest: /etc/udev/rules.d/99-ios-fastcharge.rules.j2
+    owner: root
+    group: root
+    mode: 0644

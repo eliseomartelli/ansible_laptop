@@ -1,0 +1,13 @@
+---
+- name: set RTC in universal time
+  become: true
+  timezone:
+    hwclock: UTC
+
+- name: install system tools
+  become: true
+  dnf:
+    name:
+      - gnome-tweaks
+      - seahorse
+      - smartmontools
