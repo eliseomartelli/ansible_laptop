@@ -1,9 +1,2 @@
-# ansible_posterdati
+# ansible_laptop
 Ansible provisioning role for my laptop
-
-Example playbook:
-
-    ---
-    - hosts: localhost
-      roles:
-        - ansible_posterdati
